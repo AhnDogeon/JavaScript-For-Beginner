@@ -34,6 +34,16 @@ ES5..? ES6?
 여기서 ES는 ECMAScript
 ES5는 ECMAScript5, ES6는 ECMAScript6
 
-하지만 이번 Repo에서는 Vinalla JS를 이용하여 앱을 제작할 것이다
+하지만 이번 Repo에서는 Vanilla JS를 이용하여 앱을 제작할 것이다
+```
+
+## Day2
+
+#### JavaScript Basic 문법
+
+```
+let, const, var ...
+아직은 매우 기초적인 내용
+쉽다고 넘어가지말고 기초 어느정도 학습 후 넘어갈 것
 ```
 
