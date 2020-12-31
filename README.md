@@ -105,7 +105,7 @@ sayHello2("DG2", 29);
 이제 HTML을 JS로 다뤄보자
 
 ```javascript
-// DOM이란? Document Object Module
+// DOM이란? Document Object Module HTML의 모든 요소를 Object로
 const title = document.getElementById("title");
 
 console.log(title);
