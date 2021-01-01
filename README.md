@@ -111,3 +111,38 @@ const title = document.getElementById("title");
 console.log(title);
 ```
 
+
+
+## Day4
+
+DOM
+
+```javascript
+// 이를 통해 title의 객체를 볼 수 있다. 해당 객체 수정 가능
+console.dir(title);
+// 자세한 코드는 index.js 참조
+```
+
+```javascript
+/////// 여기서부터 HTML을 다뤄보자!
+const title = document.getElementById("title");
+
+console.log(title);
+
+title.innerHTML = "Hi from JS";
+
+console.log(title);
+
+console.dir(title);
+
+title.style.color = "red";
+
+// document의 모든 속성도 볼 수 있다.
+console.dir(document);
+
+document.title = 'TIL';
+
+// 이제 queryselector로 많이 사용할 것이다.
+// #title은 id가 title인 것, .title은 class가 title인 것
+const title2 = document.querySelector("#title");
+```

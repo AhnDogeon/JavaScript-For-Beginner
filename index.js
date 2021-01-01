@@ -64,3 +64,18 @@ const title = document.getElementById("title");
 console.log(title);
 
 title.innerHTML = "Hi from JS";
+
+console.log(title);
+
+console.dir(title);
+
+title.style.color = "red";
+
+// document의 모든 속성도 볼 수 있다.
+console.dir(document);
+
+document.title = 'TIL';
+
+// 이제 queryselector로 많이 사용할 것이다.
+// #title은 id가 title인 것, .title은 class가 title인 것
+const title2 = document.querySelector("#title");
