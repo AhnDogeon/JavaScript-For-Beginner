@@ -146,3 +146,31 @@ document.title = 'TIL';
 // #title은 id가 title인 것, .title은 class가 title인 것
 const title2 = document.querySelector("#title");
 ```
+
+## Day5
+
+### Events and event handler
+
+event 란?
+
+```text
+웹사이트에서 발생하는 모든 것
+ex) click, reisze, submit, input, change, load
+```
+
+```javascript
+function handlerResize(event){
+    console.log("I have been resized");
+    console.log(event);
+}
+
+function handlerClick(){
+    title.style.color = "green";
+}
+
+window.addEventListener("resize", handlerResize); // window가 resize를 기다리고 있는 것. resize가 된다면? handlerResize 함수 실행
+
+title2.addEventListener("click", handlerClick);
+
+```
+
