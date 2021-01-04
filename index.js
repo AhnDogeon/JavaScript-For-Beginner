@@ -136,3 +136,11 @@ function init() {
 }
 
 init();
+
+
+// 번외 MDN 이용해서 찾은 event 사용
+
+function handleOffline(){
+    console.log("handleOffline");
+}
+window.addEventListener("offline", handleOffline);

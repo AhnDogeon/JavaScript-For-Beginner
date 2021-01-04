@@ -174,3 +174,40 @@ title2.addEventListener("click", handlerClick);
 
 ```
 
+## DAY6
+
+```javascript
+// JavaScript event를 알고 싶다면?
+HTML JavaScript DOM MDN
+
+// Always Use MDN!
+```
+
+##### if, else if, else Using Javascript
+
+```javascript
+// 이상하게 기존 Javascript에 이어서 작성하면 if else 구문이 제대로 동작하지 않았다.
+// 이유가 title.style.color 부분이 윗 코드에서 같이 먹힌 것 같은데 테스트 필요
+
+const title3 = document.querySelector("#title");
+
+const BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
+
+function handleClick() {
+    const currentColor = title3.style.color;
+    if (currentColor === BASE_COLOR){
+        title3.style.color = OTHER_COLOR;
+    } else {
+        title3.style.color = BASE_COLOR;
+    }
+}
+
+function init() {
+    title3.style.color = BASE_COLOR;
+    title3.addEventListener("click", handleClick);
+}
+
+init();
+```
+
