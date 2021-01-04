@@ -94,3 +94,45 @@ function handlerClick(){
 window.addEventListener("resize", handlerResize); // window가 resize를 기다리고 있는 것. resize가 된다면? handlerResize 함수 실행
 
 title2.addEventListener("click", handlerClick);
+
+// if else
+if (10 < 5){
+    console.log("Hi");
+} else if (10 === 10){
+    console.log("Ho");
+} else {
+    console.log("nooooo");
+}
+
+const age = prompt("How old are you?"); // 매우 오래된 JS
+
+if (age > 20){
+    console.log("you are adult");
+} else if (age>18 && age <= 20){
+    console.log("you are student");
+} else {
+    console.log("Welcome");
+}
+
+
+
+const title3 = document.querySelector("#title");
+
+const BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
+
+function handleClick() {
+    const currentColor = title3.style.color;
+    if (currentColor === BASE_COLOR){
+        title3.style.color = OTHER_COLOR;
+    } else {
+        title3.style.color = BASE_COLOR;
+    }
+}
+
+function init() {
+    title3.style.color = BASE_COLOR;
+    title3.addEventListener("click", handleClick);
+}
+
+init();
