@@ -211,3 +211,68 @@ function init() {
 init();
 ```
 
+## Day7
+
+#### Dom - If, else Function
+
+```javascript
+const title = document.querySelector("#title");
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick(){
+    const currentClass = title.className;
+    console.log(currentClass); 
+    if (currentClass !== CLICKED_CLASS){
+        title.className = CLICKED_CLASS;
+    } else {
+        title.className = "";
+    }
+
+}
+
+function init(){
+    title.addEventListener("click", handleClick);
+}
+
+init(); 
+```
+
+
+
+여기서 className을 바꾸어 JS는 JS대로 로직 동작, CSS는 CSS대로 동작하게 하는 것이 이상적인 코딩
+
+단, 버그가 있다!
+
+```text
+HTML 자체에 class Name을 준 경우, 그 className에 작용하는 CSS가 위와 같이 JS의 event함수로
+className을 바꿔줄 경우, 기본 HTML className에 작용하는 CSS가 사라진다는 것!
+```
+
+##### 따라서 우린  classList를 사용한다!
+
+위 handleClick 함수를 다시 classList를 사용하여 작성
+
+```javascript
+function handleClick(){
+    const hasClass = title.classList.contains(CLICKED_CLASS); // true/false
+    console.log(currentClass); 
+    if (!hasClass){
+        title.classList.add(CLICKED_CLASS);
+    } else {
+        title.classList.remove(CLICKED_CLASS);
+    }
+
+}
+```
+
+
+
+##### 이걸 더 간단히!
+
+```javascript
+function handleClick(){
+    title.classList.toggle(CLICKED_CLASS);
+}
+```
+
