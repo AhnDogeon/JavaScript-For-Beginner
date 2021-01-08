@@ -283,3 +283,26 @@ function handleClick(){
 markdown이 아닌 코드에 주석을 남겼습니다.
 
 하지만, 필요한 이론 지식이나 학습 내용이 있다면 아래에 이어나가기
+
+```javascript
+const clockContainer = document.querySelector(".js-clock"),
+ clockTitle = clockContainer.querySelector("h1");
+
+
+ function getTime() {
+     const date = new Date();
+     const minutes = date.getMinutes();
+     const hours = date.getHours();
+     const seconds = date.getSeconds();
+     clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours}:${
+         minutes < 10 ? `0${minutes}` : minutes
+        }:${seconds < 10 ? `0${seconds}` : seconds}`;
+ }
+function init() {
+    getTime();
+    setInterval(getTime, 1000); // getTime 함수를 1000ms에 한 번씩 실행하는 함수! 유용한 Timer 함수
+}
+
+init();
+```
+
