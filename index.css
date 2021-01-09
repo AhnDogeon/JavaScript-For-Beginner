@@ -18,3 +18,12 @@ h1{
 .btn {
     cursor: pointer;
 }
+
+.form,
+.greeting {
+    display: none;
+}
+
+.showing {
+    display: block;
+}

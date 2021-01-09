@@ -306,3 +306,6 @@ function init() {
 init();
 ```
 
+
+
+##### 사용자의 이름 또는 정보를 받아 Local Storage에 저장
