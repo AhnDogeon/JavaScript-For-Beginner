@@ -4,16 +4,29 @@ const toDoform = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
+const toDos = [];
+
+
 function paintToDo(text){
     console.log(text);
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
-    delBtn.innerText = "❌";
     const span = document.createElement("span");
+    const newId = toDos.length + 1;
+    delBtn.innerText = "❌";
     span.innerText = text;
     li.appendChild(delBtn);
     li.appendChild(span);
+    li.id = newId;
     toDoList.appendChild(li);
+
+    const toDoObj = {
+        text: text,
+        id: newId,
+    }
+
+    toDos.push(toDoObj);
+
 }
 
 function handleSubmit(event){
@@ -24,8 +37,8 @@ function handleSubmit(event){
 }
 
 function loadToDos() {
-    const toDos = localStorage.getItem(TODOS_LS);
-    if (toDos !== null){
+    const loadedToDos = localStorage.getItem(TODOS_LS);
+    if (loadedToDos !== null){
         // form이 항상 Showing 이므로 else 부분은 딱히 안넣어줘도 될 듯
 
     }
