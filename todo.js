@@ -6,9 +6,14 @@ const TODOS_LS = "toDos";
 
 const toDos = [];
 
+function saveToDos(){
+    // LocalStrage는 JS의 string만 저장할 수 있다. 살펴보면 Object로 되어있음
+    // localStorage.setItem(TODOS_LS, toDos);
+    // 따라서 위와 같이 써주는 것이 아닌 JSON 형태로 object를 string으로 저장 
+    localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+}
 
 function paintToDo(text){
-    console.log(text);
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
@@ -26,6 +31,7 @@ function paintToDo(text){
     }
 
     toDos.push(toDoObj);
+    saveToDos();
 
 }
 
@@ -40,7 +46,12 @@ function loadToDos() {
     const loadedToDos = localStorage.getItem(TODOS_LS);
     if (loadedToDos !== null){
         // form이 항상 Showing 이므로 else 부분은 딱히 안넣어줘도 될 듯
-
+        
+        // Local Storage에 있는 object를 화면에 보여주기
+        const parsedToDos = JSON.parse(loadedToDos);
+        parsedToDos.forEach(function(toDo){
+            paintToDo(toDo.text);
+        });
     }
 
 }
