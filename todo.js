@@ -4,7 +4,22 @@ const toDoform = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
-const toDos = [];
+let toDos = [];
+
+function deleteToDo(event){
+    // delete child element MDN
+    const btn = event.target;
+    const li = btn.parentNode; 
+    toDoList.removeChild(li);
+    const cleanToDos = toDos.filter(function(toDo){
+        // 여기서 li.id는 string 이므로 int로 파싱
+        return toDo.id !== parseInt(li.id);
+    });
+    // toDos 가 const이므로 let으로 해주어야 할 듯
+    toDos = cleanToDos;
+    saveToDos();
+}
+
 
 function saveToDos(){
     // LocalStrage는 JS의 string만 저장할 수 있다. 살펴보면 Object로 되어있음
@@ -19,6 +34,7 @@ function paintToDo(text){
     const span = document.createElement("span");
     const newId = toDos.length + 1;
     delBtn.innerText = "❌";
+    delBtn.addEventListener("click", deleteToDo);
     span.innerText = text;
     li.appendChild(delBtn);
     li.appendChild(span);
