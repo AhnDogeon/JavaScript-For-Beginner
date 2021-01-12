@@ -15,6 +15,16 @@ function deleteToDo(event){
         // 여기서 li.id는 string 이므로 int로 파싱
         return toDo.id !== parseInt(li.id);
     });
+    // id를 새로고침해도 그대로 가져가도록
+    while(toDoList.firstChild) {
+        toDoList.removeChild(toDoList.firstChild);
+        }
+    idNumbers = 1;
+    cleanToDos.forEach(function(toDo){
+        toDo.id = idNumbers;
+        paintToDo(toDo.text); // 내부 id도 idNum으로 지정됨.
+        // paintToDo가 실행된 후 idNumbers += 1;이 실행되기 때문에 추가로 실행하지 않음.
+    });
     // toDos 가 const이므로 let으로 해주어야 할 듯
     toDos = cleanToDos;
     saveToDos();
@@ -28,11 +38,16 @@ function saveToDos(){
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }
 
+let idNumbers = 1;
+
 function paintToDo(text){
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
-    const newId = toDos.length + 1;
+    // const newId = toDos.length + 1; // 이렇게 하면 삭제 및 재등록 시 같은 id가 한꺼번에 사라지는 버그..
+    const newId = idNumbers;
+    idNumbers += 1;
+    
     delBtn.innerText = "❌";
     delBtn.addEventListener("click", deleteToDo);
     span.innerText = text;
