@@ -309,3 +309,15 @@ init();
 
 
 ##### 사용자의 이름 또는 정보를 받아 Local Storage에 저장
+
+
+
+# 이제 배포해보자
+
+##### github io를 이용한 프로젝트 배포 학습
+
+package.json 설치
+
+
+
+what is 'package-lock.json'?
