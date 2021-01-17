@@ -35,7 +35,7 @@ function loadName(){
         // user is not
         askForName();
 
-    } else {0
+    } else {
         // there is user
         paintGreeting(currentUser);
 
